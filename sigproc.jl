@@ -30,8 +30,9 @@ function findextrems(arr, half_win, trig_level; max_cnt=2)
 	return pos
 end
 
-function calc_freq_by_extrems(arr, time_step)
+function freqbyextrems(arr, time_step)
     hp_num = length(arr)-1 # Number of half-periods
+
     #hp_time - Median time of 1 half-period
     hp_time = sum([arr[i+1]-arr[i] for i in 1:hp_num])/hp_num
 
