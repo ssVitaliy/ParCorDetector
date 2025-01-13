@@ -68,3 +68,14 @@ function calcrefparams(sig, trig_level, time_step)
 
 	return (1/period, atten, start_point)
 	end
+
+function makecor(long_sig::Vector, ref::Vector)::Vector
+	cor_range = length(long_sig)-length(ref)
+	cor_result = zeros(cor_range)
+
+	for i in 1:cor_range
+		cor_result[i] += sum(long_sig[i:length(ref)+i-1] .* ref)/length(ref)
+		end
+	return cor_result
+	end
+
