@@ -1,3 +1,3 @@
-Start with script "test_whole_system.jl".
+Начните знакомство со скрипта "test_whole_system.jl".
 
-Some info in notes/info.tex
+За описанием методики сюда: notes/info.tex
