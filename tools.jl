@@ -1,4 +1,4 @@
-function make_ref_sig(
+function makerefsig(
 		time_base::AbstractRange,
 		len_sec::Union{AbstractFloat, Int},
 		freq::Float64=20.0,
@@ -10,21 +10,21 @@ function make_ref_sig(
 				for t in time_base[1:len_discrete]] 
 end
 
-function insert_sig!(dist_sig::Vector, ref::Vector, pos::Int)
+function insertsig!(dist_sig::Vector, ref::Vector, pos::Int)
 	dist_sig[pos:pos+length(ref)-1]+=ref
 end
 
-function calc_rms(seq::Vector)::Float64
+function calcrms(seq::Vector)::Float64
 	sqrt(sum(seq.^2)/length(seq))
 end
 
-function calc_pp(arr::Vector)::Float64
+function calcpp(arr::Vector)::Float64
 	a,b = extrema(arr)
 	b-a	
 end
 
 # Generate random WaveNoise
-function harm_noise(
+function harmnoise(
 		time_base::AbstractRange,
 		freq_range::Union{AbstractVector, Tuple};
 		rms::Union{Integer, AbstractFloat}=0,
